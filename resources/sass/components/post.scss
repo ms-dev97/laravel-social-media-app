@@ -1,0 +1,43 @@
+.post {
+    &:not(:last-of-type) {
+        margin-bottom: 1.125rem;
+    }
+    .post-header {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .name {
+            div:first-of-type {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            div:last-of-type {
+                color: #646464;
+                font-size: 0.875rem;
+            }
+        }
+    }
+
+    .body {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .post-interactions {
+        display: flex;
+        gap: 0.875rem;
+        .interaction {
+            padding: 0.5rem 1rem;
+            flex: 1;
+            background-color: #646464;
+            color: #fff;
+            border-radius: 5px;
+        }
+    }
+}

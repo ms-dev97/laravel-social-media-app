@@ -1,0 +1,83 @@
+:root {
+    --body-bg: #f9f9f9;
+    --text-color: #333;
+    --border-color: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.01);
+    --neutral-0: #000;
+    --neutral-1: #222;
+    --neutral-2: #2e2e2e;
+    --neutral-3: #777;
+    --neutral-10: #fff;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+button {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+}
+input {
+    border: none;
+    padding: 0;
+    height: 40px;
+    max-width: 100%;
+    font-family: inherit;
+}
+textarea {
+    padding: 0;
+    border: none;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    max-width: 1200px;
+    padding: 0 5vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn {
+    display: inline-block;
+    padding: 0.3rem 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.box {
+    padding: 0.5rem 1rem;
+    background-color: var(--neutral-10);
+    border-radius: 5px;
+    box-shadow: 1px 0px 4px 4px var(--shadow-color);
+    .title {
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+}
+.group-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #555;
+    }
+    .name {
+        font-weight: 500;
+    }
+}

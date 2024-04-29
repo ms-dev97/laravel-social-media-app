@@ -1,0 +1,109 @@
+.profile-page {
+    .user-cover {
+        height: 250px;
+        position: relative;
+        .cover-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .cover-upload {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 0.875rem;
+            text-align: center;
+            padding: 3px 13px;
+            border-radius: 5px;
+            display: block;
+            cursor: pointer;
+            input[type="file"] {
+                opacity: 0;
+                width: 0;
+                position: absolute;
+            }
+        }
+        .cover-upload-action {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+            button {
+                background-color: rgba(0, 0, 0, 0.7);
+                color: #fff;
+                font-size: 0.875rem;
+                padding: 3px 13px;
+                border-radius: 5px;
+                display: block;
+            }
+        }
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            .avatar-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .update-avatar {
+                position: absolute;
+                inset: 0;
+                .avatar-upload {
+                    display: none;
+                    width: 100%;
+                    height: 100%;
+                    place-items: center;
+                    color: #fff;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    cursor: pointer;
+                    input[type="file"] {
+                        display: none;
+                    }
+                }
+
+                .avatar-upload-action {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                    height: 100%;
+                }
+            }
+            &:hover .avatar-upload {
+                display: grid;
+            }
+        }
+        
+        .user-name {
+            .name {
+                font-size: 1.125rem;
+                font-weight: bold;
+            }
+            .followers {
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: var(--neutral-3);
+            }
+        }
+
+        .user-edit {
+            padding: 0.3rem 2rem;
+            margin-inline-start: auto;
+            background-color: var(--neutral-0);
+            color: var(--neutral-10);
+            border-radius: 7px;
+        }
+    }
+}
