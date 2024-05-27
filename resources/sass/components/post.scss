@@ -22,6 +22,35 @@
                 font-size: 0.875rem;
             }
         }
+        .post-menu {
+            width: 24px;
+            margin-inline-start: auto;
+            position: relative;
+            
+            .menu-icon {
+                cursor: pointer;
+            }
+
+            .menu {
+                position: absolute;
+                top: 100%;
+                inset-inline-start: 0;
+                background-color: #fff;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+                padding: 10px;
+                width: 100px;
+                border-radius: 5px;
+            }
+            .menu-item {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                cursor: pointer;
+                svg {
+                    width: 16px;
+                }
+            }
+        }
     }
 
     .body {
@@ -39,5 +68,25 @@
             color: #fff;
             border-radius: 5px;
         }
+    }
+}
+
+.post-edit-modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    }
+
+    .post-form {
+        position: relative;
+        z-index: 2;
+        max-width: 500px;
     }
 }

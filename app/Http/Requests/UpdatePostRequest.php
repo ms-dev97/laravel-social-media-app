@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePostRequest extends FormRequest
+class UpdatePostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return $this->route('post')->user_id == auth()->user()->id;
     }
 
     /**
@@ -22,8 +22,7 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'body' => 'nullable',
-            'files' => ['array', 'max:20'],
+            'body' => 'nullable'
         ];
     }
 }

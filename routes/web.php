@@ -25,6 +25,8 @@ Route::middleware('auth')->group(function () {
 
     // create post
     Route::post('/post', [PostController::class, 'store'])->name('post.store');
+    // update post
+    Route::put('/post/{post}', [PostController::class, 'update'])->name('post.update');
 });
 
 Route::get('/u/{user:username}', [ProfileController::class, 'index'])->name('profile.index');

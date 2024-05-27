@@ -1,25 +1,44 @@
 <script setup>
-    defineProps([
-        'name',
-        'avatar',
-        'body',
-        'createdAt'
-    ])
+import { EllipsisVerticalIcon } from "@heroicons/vue/24/solid";
+import { PencilSquareIcon } from "@heroicons/vue/16/solid";
+import { ref } from "vue";
+
+const props = defineProps({
+    post: Object
+});
+
+const emit = defineEmits(['showEditModal']);
+
+function showEditModal() {
+    emit('showEditModal', props.post);
+}
+
+const showMenu = ref(false);
 </script>
 
 <template>
     <div class="box post">
         <div class="post-header">
             <div class="avatar">
-                <img :src="'/storage/'+avatar" alt="">
+                <img :src="'/storage/'+post.user.avatar" alt="">
             </div>
             <div class="name">
-                <div>{{ name }}</div>
-                <div>{{ createdAt }}</div>
+                <div>{{ post.user.name }}</div>
+                <div>{{ post.created_at }}</div>
+            </div>
+            <div class="post-menu">
+                <EllipsisVerticalIcon class="menu-icon" @click="showMenu = !showMenu" />
+
+                <ul class="menu" v-if="showMenu">
+                    <li class="menu-item" @click="showEditModal">
+                        <PencilSquareIcon />
+                        <span>Edit</span>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <div class="body">{{ body }}</div>
+        <div class="body">{{ post.body }}</div>
 
         <div class="post-interactions">
             <button class="interaction like">Like</button>

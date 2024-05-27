@@ -1,9 +1,9 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
 import AppLayout from '@/Layouts/AppLayout.vue';
-import Post from '@/Components/Post.vue';
 import PostForm from '@/Components/PostForm.vue';
 import GroupItem from '@/Components/GroupItem.vue';
+import PostList from '@/Components/PostList.vue';
 
 defineProps({
     'posts': Object,
@@ -26,16 +26,11 @@ defineProps({
 
             <main>
                 <PostForm />
-
-                <div class="posts" v-if="posts.data.length">
-                    <Post
-                        v-for="post of posts.data"
-                        :name="post.user.name"
-                        :avatar="post.user.avatar"
-                        :body="post.body"
-                        :createdAt="post.created_at"
-                    />
-                </div>
+                
+                <PostList
+                    v-if="posts.data.length"
+                    :posts="posts.data"
+                />
 
                 <div class="box" v-else>
                     There are no posts yet.
