@@ -1,6 +1,6 @@
 <script setup>
 import {useForm} from '@inertiajs/vue3';
-import { PaperClipIcon } from '@heroicons/vue/16/solid';
+import { PaperClipIcon, FolderIcon } from '@heroicons/vue/16/solid';
 import { ref } from 'vue';
 
 const postForm = useForm({
@@ -65,7 +65,10 @@ function submitPost() {
                 </div>
 
                 <div class="file" v-else>
-                    {{ file.file.name }}
+                    <FolderIcon class="file-icon" />
+                    <div>
+                        {{ file.file.name }}
+                    </div>
                 </div>
             </div>
         </div>

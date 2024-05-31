@@ -10,6 +10,9 @@
     #attachment-input {
         display: none;
     }
+    [for="attachment-input"] {
+        display: block;
+    }
     .attatch-icon {
         width: 16px;
         display: block;
@@ -18,10 +21,27 @@
     .attachments {
         display: flex;
         flex-wrap: wrap;
-        
+        gap: 1%;
+        margin-block: 0.625rem;
+
         .attachment {
-            width: 33.33%;
+            width: 32%;
             position: relative;
+            aspect-ratio: 1;
+
+            .file {
+                height: 100%;
+                background-color: #f1f1f1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .file-icon {
+                display: block;
+                width: 24px;
+            }
 
             .delete {
                 position: absolute;
