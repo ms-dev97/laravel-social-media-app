@@ -39,6 +39,7 @@ function submitPost() {
         onSuccess: () => {
             postForm.body = '';
             postForm.files = [];
+            files.value = [];
         },
     });
 }
