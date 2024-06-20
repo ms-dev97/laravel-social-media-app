@@ -1,6 +1,6 @@
 <script setup>
 import { EllipsisVerticalIcon } from "@heroicons/vue/24/solid";
-import { PencilSquareIcon } from "@heroicons/vue/16/solid";
+import { PencilSquareIcon, FolderIcon } from "@heroicons/vue/16/solid";
 import { ref } from "vue";
 
 const props = defineProps({
@@ -39,6 +39,26 @@ const showMenu = ref(false);
         </div>
 
         <div class="body">{{ post.body }}</div>
+
+        <!-- Attachments -->
+        <div v-if="post.attachments.length" class="attachments">
+            <div 
+                class="attachment"
+                :class="{full: post.attachments.length == 1, half: post.attachments.length == 2}"
+                v-for="file of post.attachments"
+            >
+                <div class="img" v-if="file.mime.split('/')[0] === 'image'">
+                    <img :src="'/storage/' + file.path" alt=""/>
+                </div>
+
+                <div class="file" v-else>
+                    <FolderIcon class="file-icon" />
+                    <div>
+                        {{ file.name }}
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="post-interactions">
             <button class="interaction like">Like</button>

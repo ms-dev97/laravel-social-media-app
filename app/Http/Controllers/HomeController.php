@@ -9,7 +9,7 @@ use App\Models\Post;
 class HomeController extends Controller
 {
     public function index() {
-        $posts = Post::with('user')->latest()->paginate(10);
+        $posts = Post::with(['user', 'attachments'])->latest()->paginate(10);
         return Inertia::render('Home', [
             'posts' => $posts,
         ]);
