@@ -54,11 +54,8 @@ function submitPost() {
         </label>
 
         <div class="attachments" v-if="files.length">
-            <div class="attachment" v-for="(file, index) of files.slice(0, 3)">
+            <div class="attachment" v-for="(file, index) of files">
                 <div class="delete" @click="removeFile(file)">x</div>
-                <div v-if="index === 2 && files.length > 3" class="more">
-                    +{{ files.length - 3 }}
-                </div>
 
                 <div class="img" v-if="file.file.type.split('/')[0] === 'image'">
                     <img :src="file.url" alt=""/>
